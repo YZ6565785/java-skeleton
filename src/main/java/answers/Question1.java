@@ -12,6 +12,7 @@ public class Question1 {
 			int index=0;
 			for(int i=0;i<portfolios.length-1;i++){
 				for(int j=i+1;j<portfolios.length;j++){
+
 					a[index++]=convertToDecimal(convertToBinary(portfolios[i]),convertToBinary(portfolios[j]));
 				}
 			}
@@ -72,4 +73,5 @@ public class Question1 {
 		}
 		return f;
 	}
+	
 }

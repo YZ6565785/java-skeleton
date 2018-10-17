@@ -10,8 +10,8 @@ public class Question1 {
 			int totalWays=factorial(n)/(factorial(r)*factorial(n-r));
 			int[] a =new int[totalWays];
 			int index=0;
-			for(int i=0;i<portfolios.length-i;i++){
-				for(int j=i+1;j<portfolios.length;i++){
+			for(int i=0;i<portfolios.length-1;i++){
+				for(int j=i+1;j<portfolios.length;j++){
 					a[index++]=convertToDecimal(convertToBinary(portfolios[i]),convertToBinary(portfolios[j]));
 				}
 			}
@@ -36,9 +36,9 @@ public class Question1 {
 		String newBinary = "";
 		for(int j=0;j<16;j++){
 			if(mergingTo1(binarya[j],binaryb[j])){
-				newBinary+="1";
+				newBinary="1"+newBinary;
 			}else{
-				newBinary+="0";
+				newBinary="0"+newBinary;
 			}
 		}
 		return Integer.parseInt(newBinary,2);

@@ -3,11 +3,10 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-		// TODO Auto-generated method stub
 		try{
 			int n=portfolios.length;
 			int r=2;
-			int totalWays=factorial(n)/(factorial(r)*factorial(n-r));
+			int totalWays=factorialRec(n)/(factorialRec(r)*factorialRec(n-r));
 			int[] a =new int[totalWays];
 			int index=0;
 			for(int i=0;i<portfolios.length-1;i++){
@@ -65,13 +64,12 @@ public class Question1 {
 		}
 		return max;
 	}
-	//simulate factorial calculation in Math
-	public static int factorial(int n){
-		int f=1;
-		for(int i=1;i<=n;i++){
-			f*=i;
+	//================using recusion to do factorial
+	public static int factorialRec(int n){
+		if (n<=1){
+			return 1;
 		}
-		return f;
+		int fact = factorialRec(n-1)*n;
+		return fact;
 	}
-	
 }

@@ -3,7 +3,6 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-		try{
 			int n=portfolios.length;
 			int r=2;
 			int totalWays=factorialRec(n)/(factorialRec(r)*factorialRec(n-r));
@@ -16,10 +15,6 @@ public class Question1 {
 				}
 			}
 			return findMax(a);
-		}catch(Exception e){
-		}
-		
-		return -1;
 	}
 	//converting each decimal number to 16-bit binary and return back the binary in form of an array
 	public static int[] convertToBinary(int n){

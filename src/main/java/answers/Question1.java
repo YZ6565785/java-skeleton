@@ -3,18 +3,26 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-			int n=portfolios.length;
-			int r=2;
-			int totalWays=factorialRec(n)/(factorialRec(r)*factorialRec(n-r));
-			int[] a =new int[totalWays];
-			int index=0;
-			for(int i=0;i<portfolios.length-1;i++){
-				for(int j=i+1;j<portfolios.length;j++){
+			try{
+				int n=portfolios.length;
+				int r=2;
+				int totalWays=factorialRec(n)/(factorialRec(r)*factorialRec(n-r));
+				int[] a =new int[totalWays];
+				int index=0;
+				for(int i=0;i<portfolios.length-1;i++){
+					for(int j=i+1;j<portfolios.length;j++){
 
-					a[index++]=convertToDecimal(convertToBinary(portfolios[i]),convertToBinary(portfolios[j]));
+						a[index++]=convertToDecimal(convertToBinary(portfolios[i]),convertToBinary(portfolios[j]));
+					}
+				}
+				return findMax(a);
+			}catch(Exception e){
+				if(portfolios.length==1){
+					return protfolio[0];
+				}else{
+					return -1;
 				}
 			}
-			return findMax(a);
 	}
 	//converting each decimal number to 16-bit binary and return back the binary in form of an array
 	public static int[] convertToBinary(int n){

@@ -3,7 +3,8 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-		int denominator=(factorialRec(2)*factorialRec(portfolios.length-2))；
+		int n=portfolios.length;
+		int denominator=factorialRec(2)*factorialRec(n-2)；
 		if(denominator<=0){
 			denominator=1;
 		}

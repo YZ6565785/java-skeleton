@@ -3,13 +3,12 @@ package answers;
 public class Question1 {
 
 	public static int bestMergedPortfolio(int[] portfolios) {
-		if(portfolios.length==1){
-			return portfolios[0];
+		int denominator=(factorialRec(2)*factorialRec(portfolios.length-2))；
+		if(denominator<=0){
+			denominator=1;
 		}
-		if(portfolios.length==0){
-			return -1;
-		}
-		int totalWays=factorialRec(portfolios.length)/(factorialRec(2)*factorialRec(portfolios.length-2));
+		int totalWays=factorialRec(portfolios.length)/denominator;
+	
 		int[] a =new int[totalWays];
 		int index=0;
 		for(int i=0;i<portfolios.length-1;i++){
